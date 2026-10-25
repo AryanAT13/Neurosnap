@@ -5,7 +5,6 @@ replacing minimum-snap optimisation with a deep-learning pipeline.**
 
 Reference paper: D. Mellinger and V. Kumar, *"Minimum Snap Trajectory Generation and Control for
 Quadrotors"*, IEEE ICRA 2011, pp. 2520–2525, [doi:10.1109/ICRA.2011.5980409](https://doi.org/10.1109/ICRA.2011.5980409).
-The project proposal is in [`Drone_Project_Report_Aryan_Amit_Tiwari_23BAI1409.pdf`](Drone_Project_Report_Aryan_Amit_Tiwari_23BAI1409.pdf).
 
 ![dashboard](docs/media/demo.gif)
 
