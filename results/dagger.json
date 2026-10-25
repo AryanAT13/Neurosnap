@@ -1,0 +1,46 @@
+[
+ {
+  "iter": 0,
+  "model": "planner_transformer_nosnap.pt",
+  "teacher": {
+   "median": 1.2508050489616838,
+   "p90": 1.6029546164822082,
+   "blowups": 0
+  },
+  "drift": {
+   "median": 1.8954537341396565,
+   "p90": 2.460470710774774,
+   "blowups": 8
+  }
+ },
+ {
+  "iter": 1,
+  "model": "planner_dagger_it1.pt",
+  "states": 23991,
+  "drift": {
+   "median": 1.6150778522779343,
+   "p90": 1.9969041622638208,
+   "blowups": 3
+  }
+ },
+ {
+  "iter": 2,
+  "model": "planner_dagger_it2.pt",
+  "states": 25022,
+  "drift": {
+   "median": 1.4863756221933293,
+   "p90": 1.7862027134969147,
+   "blowups": 5
+  }
+ },
+ {
+  "iter": 3,
+  "model": "planner_dagger_it3.pt",
+  "states": 25123,
+  "drift": {
+   "median": 1.4380591543258827,
+   "p90": 1.7834925805987718,
+   "blowups": 2
+  }
+ }
+]

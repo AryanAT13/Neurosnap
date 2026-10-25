@@ -1,0 +1,85 @@
+{
+ "n_problems": 1000,
+ "summary": {
+  "Min-snap QP, heuristic T": {
+   "snap_ratio_median": 8.594643670012704,
+   "snap_ratio_p90": 66.18375663823397,
+   "duration_ratio_median": 1.0543737060502782,
+   "duration_ratio_p90": 1.2374202962199725,
+   "limit_violation_rate": 0.062,
+   "ms_mean": 0.5032751490361989,
+   "ms_p95": 0.997602613642811,
+   "max_start_state_err": 4.579669976578771e-16
+  },
+  "Min-snap QP, optimised T (teacher)": {
+   "snap_ratio_median": 1.0,
+   "snap_ratio_p90": 1.0,
+   "duration_ratio_median": 1.0,
+   "duration_ratio_p90": 1.0,
+   "limit_violation_rate": 0.027,
+   "ms_mean": 2.5816677543334663,
+   "ms_p95": 4.1897686664015055,
+   "max_start_state_err": 6.010984557184401e-16
+  },
+  "Transformer, no snap loss, DAgger (full neural)": {
+   "snap_ratio_median": 2.0120615744666965,
+   "snap_ratio_p90": 9.133426426698364,
+   "duration_ratio_median": 1.0010414200545252,
+   "duration_ratio_p90": 1.0252930098798965,
+   "limit_violation_rate": 0.026,
+   "ms_mean": 0.8958510044030845,
+   "ms_p95": 1.2260062852874398,
+   "max_start_state_err": 4.440892098500626e-16
+  },
+  "Transformer, no snap loss, DAgger + QP derivatives (hybrid)": {
+   "snap_ratio_median": 0.9985621156989657,
+   "snap_ratio_p90": 1.0901247181498284,
+   "duration_ratio_median": 1.0008607324956755,
+   "duration_ratio_p90": 1.0225376079404924,
+   "limit_violation_rate": 0.029,
+   "ms_mean": 0.9201066680252552,
+   "ms_p95": 1.1651063570752715,
+   "max_start_state_err": 4.440892098500626e-16
+  },
+  "Transformer, snap loss 0.5 (full neural)": {
+   "snap_ratio_median": 4.682512985310687,
+   "snap_ratio_p90": 38.29748822867298,
+   "duration_ratio_median": 1.0050200595708252,
+   "duration_ratio_p90": 1.0647549208142548,
+   "limit_violation_rate": 0.031,
+   "ms_mean": 0.8814061884768307,
+   "ms_p95": 1.2422522297129033,
+   "max_start_state_err": 5.551115123125783e-16
+  },
+  "Transformer, snap loss 0.1 (full neural)": {
+   "snap_ratio_median": 3.095790593917728,
+   "snap_ratio_p90": 19.36527296130354,
+   "duration_ratio_median": 1.0024176009080883,
+   "duration_ratio_p90": 1.0399097167719613,
+   "limit_violation_rate": 0.027,
+   "ms_mean": 0.852836721111089,
+   "ms_p95": 1.168847852386534,
+   "max_start_state_err": 6.661338147750939e-16
+  },
+  "Transformer, no snap loss (full neural)": {
+   "snap_ratio_median": 2.3120842755569626,
+   "snap_ratio_p90": 11.183306225317486,
+   "duration_ratio_median": 1.0017332383143964,
+   "duration_ratio_p90": 1.0263988558180217,
+   "limit_violation_rate": 0.026,
+   "ms_mean": 0.8468039147555828,
+   "ms_p95": 1.1637560091912746,
+   "max_start_state_err": 5.551115123125783e-16
+  },
+  "MLP, snap loss 0.5 (full neural)": {
+   "snap_ratio_median": 17.031904905990896,
+   "snap_ratio_p90": 124.45106341325766,
+   "duration_ratio_median": 1.0231272075731934,
+   "duration_ratio_p90": 1.1623727507235793,
+   "limit_violation_rate": 0.032,
+   "ms_mean": 0.5673653995618224,
+   "ms_p95": 0.9028736501932143,
+   "max_start_state_err": 4.579669976578771e-16
+  }
+ }
+}
