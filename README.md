@@ -1,9 +1,7 @@
 # NeuroSnap
 
-**Vision-guided learned trajectory generation for autonomous quadrotor gate navigation:
+**Vision guided learned trajectory generation for autonomous quadrotor gate navigation:
 replacing minimum-snap optimisation with a deep-learning pipeline.**
-
-Course project, BCSE428L Autonomous Drones. Aryan Amit Tiwari (23BAI1409).
 
 Reference paper: D. Mellinger and V. Kumar, *"Minimum Snap Trajectory Generation and Control for
 Quadrotors"*, IEEE ICRA 2011, pp. 2520–2525, [doi:10.1109/ICRA.2011.5980409](https://doi.org/10.1109/ICRA.2011.5980409).
@@ -193,45 +191,7 @@ python3.12 -m venv .venv
 The trained weights are in `models/`. Other demo options are `--planner qp_opt|qp_heur|line|nn_hybrid`,
 `--perception blind|oracle` and `--no-residual`. `--save out.mp4` / `--gif out.gif` record the run.
 
-## Reproduce everything
 
-`scripts/reproduce.sh` runs the whole pipeline. These are the steps:
-
-```bash
-.venv/bin/python scripts/generate_planner_data.py --train 80000 --test 4000   # teacher labels (~3 min)
-.venv/bin/python scripts/train_planner.py --kind transformer                  # proposed planner
-.venv/bin/python scripts/train_planner.py --kind mlp                          # ablation
-.venv/bin/python scripts/train_planner.py --kind transformer --no-snap        # base of the deployed planner
-.venv/bin/python scripts/train_planner.py --kind transformer --w-snap 0.1 --tag transformer_snap01
-.venv/bin/python scripts/dagger_planner.py --iters 3                          # deployed planner
-.venv/bin/python scripts/train_perception.py --epochs 25 --steps 250          # GateNet (Apple MPS)
-.venv/bin/python scripts/train_residual.py --flights 40                       # drag model
-.venv/bin/python scripts/evaluate_planner.py --n 1000
-.venv/bin/python scripts/evaluate_perception.py --n 1000
-.venv/bin/python scripts/benchmark.py --seeds 40 --workers 6
-.venv/bin/python scripts/make_figures.py
-.venv/bin/python -m pytest -q tests
-```
-
-## Repository layout
-
-```
-neurosnap/            core library
-  config.py           every physical constant and limit in one place
-  sim/                quadrotor dynamics, cascaded PID, residual model
-  world/              gate courses, prior map, crossing checks
-  vision/             FPV renderer with self-labelling
-  perception/         GateNet, online dataset, PnP detector, gate-map KF
-  traj/               polynomial basis, min-snap teacher, planner dataset
-  planning/           neural planner and baseline planners
-  viz/                dashboard
-  mission.py          closed-loop mission runner
-scripts/              data generation, training, evaluation, benchmark, figures, demo
-models/               trained weights and training logs
-results/              metrics (JSON / CSV)
-docs/figures, media   plots, screenshots, demo video
-tests/                pytest suite
-```
 
 ## Limitations
 
