@@ -55,6 +55,9 @@ class CascadedPID:
         b2 /= np.linalg.norm(b2)
         Rd = np.column_stack([np.cross(b2, b3), b2, b3])
         thrust = float(np.dot(f_vec, R[:, 2]))
+        if 'Rd' in ref:                     # attitude-level command (used by the stability analysis)
+            Rd = ref['Rd']
+            thrust = qd.mass * G / max(R[2, 2], 0.5)
         # attitude (SO(3) error) -> desired body rates
         e_R = 0.5 * vee(Rd.T @ R - R.T @ Rd)
         w_d = np.clip(-self.kp_att * e_R, -cp.max_rate, cp.max_rate)

@@ -5,4 +5,5 @@ opencv-python>=4.8
 matplotlib>=3.8
 pillow>=10.0
 tqdm
+reportlab>=4.0        # report generation only
 pytest

@@ -1,0 +1,62 @@
+{
+ "roll": {
+  "rise_s": 0.08299999999999996,
+  "overshoot_pct": 0.0,
+  "settle_5pct_s": 0.19300000000000006
+ },
+ "pitch": {
+  "rise_s": 0.08299999999999996,
+  "overshoot_pct": 0.0,
+  "settle_5pct_s": 0.19300000000000006
+ },
+ "yaw": {
+  "rise_s": 0.251,
+  "overshoot_pct": 0.0,
+  "settle_5pct_s": 0.38
+ },
+ "altitude": {
+  "rise_s": 1.01,
+  "overshoot_pct": 2.267629633842061,
+  "settle_5pct_s": 1.405
+ },
+ "gust": {
+  "peak_dev_m": 0.16345098544912717,
+  "recover_2cm_s": 1.1480000000000001
+ },
+ "roll_rate_loop": {
+  "phase_margin_deg": 37.483444769537385,
+  "gain_margin_db": 12.73219668957795,
+  "crossover_rad_s": 44.7881156234599
+ },
+ "roll_attitude_loop": {
+  "phase_margin_deg": 75.0050825767443,
+  "gain_margin_db": 7.332742116509899,
+  "crossover_rad_s": 14.968172936709648
+ },
+ "attitude_gain": {
+  "design": 14.0,
+  "unstable_above": 33.0,
+  "design_poles": [
+   [
+    -512.4581956371538,
+    0.0
+   ],
+   [
+    -10.084731450445739,
+    47.99607430871231
+   ],
+   [
+    -10.084731450445739,
+    -47.99607430871231
+   ],
+   [
+    -17.039052916686934,
+    0.0
+   ],
+   [
+    -0.3332885452675981,
+    0.0
+   ]
+  ]
+ }
+}

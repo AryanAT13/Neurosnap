@@ -15,6 +15,8 @@ $PY scripts/train_residual.py --flights 40
 $PY scripts/evaluate_planner.py --n 1000
 $PY scripts/evaluate_perception.py --n 1000
 $PY scripts/benchmark.py --seeds 40 --workers 6
+$PY scripts/control_analysis.py
 $PY scripts/make_figures.py
 $PY scripts/demo.py --seed 3 --save docs/media/demo.mp4 --gif docs/media/demo.gif
+$PY docs/report/build_report.py
 $PY -m pytest -q tests

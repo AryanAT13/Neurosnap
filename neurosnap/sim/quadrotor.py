@@ -25,6 +25,7 @@ class Quadrotor:
         self.J = q.J
         self.J_inv = np.linalg.inv(q.J)
         self.wind = np.zeros(3) if wind is None else np.asarray(wind, float)
+        self.ext_force = np.zeros(3)          # external push (gust test), world frame
         self.reset(np.zeros(3))
 
     def reset(self, pos, yaw=0.0, vel=None):
@@ -62,7 +63,7 @@ class Quadrotor:
         self.rpm += (rpm_cmd - self.rpm) * (1 - np.exp(-dt / q.motor_tau))
         f = self.thrust_forces()
         R = self.R
-        F = R @ np.array([0.0, 0.0, f.sum()]) + self.drag_force(R) - np.array([0, 0, q.mass * G])
+        F = R @ np.array([0.0, 0.0, f.sum()]) + self.drag_force(R) + self.ext_force - np.array([0, 0, q.mass * G])
         tau = np.array([np.dot(self.rpos[:, 1], f), -np.dot(self.rpos[:, 0], f),
                         np.dot(self.spin, q.km * self.rpm ** 2)])
         self.acc = F / q.mass
